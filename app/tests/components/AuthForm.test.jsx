@@ -12,14 +12,6 @@ describe('AuthForm', () => {
         expect(AuthForm).toExist();
     });
 
-    it('should render account type selector', () => {
-        var authForm = TestUtils.renderIntoDocument(<AuthForm showAccountTypeSelector={true}/>);
-        var $el = $(ReactDOM.findDOMNode(authForm));
-        var $selector = $el.find('select');
-        
-        expect($selector.length).toBe(1);
-    });
-
     it('should call handler on form submit', () => {
         var spy = expect.createSpy();
         var authForm = TestUtils.renderIntoDocument(<AuthForm onSubmit={spy}/>);
@@ -52,6 +44,28 @@ describe('AuthForm', () => {
         TestUtils.Simulate.submit($el.find('form')[0]);
 
         expect(spy).toNotHaveBeenCalled();
+    });
+
+    it('should render account type selector', () => {
+        var authForm = TestUtils.renderIntoDocument(<AuthForm showAccountTypeSelector={true}/>);
+        var $el = $(ReactDOM.findDOMNode(authForm));
+        var $selector = $el.find('select');
+        
+        expect($selector.length).toBe(1);
+    });
+
+    it('should call handler on form submit with account type selector', () => {
+        var spy = expect.createSpy();
+        var authForm = TestUtils.renderIntoDocument(<AuthForm showAccountTypeSelector={true} onSubmit={spy} />);
+        var $el = $(ReactDOM.findDOMNode(authForm));
+
+        authForm.refs.username.value = 'username';
+        authForm.refs.password.value = 'password';
+        authForm.refs.accountType.value = 'admin';
+
+        TestUtils.Simulate.submit($el.find('form')[0]);
+
+        expect(spy).toHaveBeenCalledWith('username', 'password', 'admin');
     });
 
 });
