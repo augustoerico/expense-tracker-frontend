@@ -12,6 +12,14 @@ describe('AuthForm', () => {
         expect(AuthForm).toExist();
     });
 
+    it('should render account type selector', () => {
+        var authForm = TestUtils.renderIntoDocument(<AuthForm showAccountTypeSelector={true}/>);
+        var $el = $(ReactDOM.findDOMNode(authForm));
+        var $selector = $el.find('select');
+        
+        expect($selector.length).toBe(1);
+    });
+
     it('should call handler on form submit', () => {
         var spy = expect.createSpy();
         var authForm = TestUtils.renderIntoDocument(<AuthForm onSubmit={spy}/>);

@@ -6,11 +6,16 @@ var AuthForm = React.createClass({
         
         var username = this.refs.username.value.trim();
         var password = this.refs.password.value;
-        var accountType = this.refs.accountType.value;
-
+        
         if (username && password) {
-            this.props.onSubmit(username, password, accountType);
-        } 
+            var {showAccountTypeSelector} = this.props;
+            if (showAccountTypeSelector) {
+                var accountType = this.refs.accountType.value;
+                this.props.onSubmit(username, password, accountType);
+            } else {
+                this.props.onSubmit(username, password);
+            }
+        }
     },
     render: function () {
         var {showAccountTypeSelector} = this.props;
@@ -19,8 +24,8 @@ var AuthForm = React.createClass({
             if (showAccountTypeSelector) {
                 return (
                     <select refs="accountType">
-                        <option value="admin">Admin</option>
                         <option value="regular">Regular</option>
+                        <option value="admin">Admin</option>
                     </select>
                 );
             }
