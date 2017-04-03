@@ -7,7 +7,7 @@ var ExpenseFormView = React.createClass({
         var strAmount = this.refs.amount.value;
         var description = this.refs.description.value;
 
-        if (strAmount.match(/^\d+$/)) {
+        if (strAmount.match(/^\d+(\.\d+)?$/)) {
             var amount = parseFloat(strAmount, 10);
             this.props.onSubmit(amount, description);
         }

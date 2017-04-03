@@ -17,11 +17,11 @@ describe('ExpenseFormView', () => {
         var expenseFormView = TestUtils.renderIntoDocument(<ExpenseFormView onSubmit={spy}/>);
         var $el = $(ReactDOM.findDOMNode(expenseFormView));
 
-        expenseFormView.refs.amount.value = 10.0;
+        expenseFormView.refs.amount.value = 10.5;
         expenseFormView.refs.description.value = 'Description';
         TestUtils.Simulate.submit($el.find('form')[0]);
 
-        expect(spy).toHaveBeenCalledWith(10.0, 'Description');
+        expect(spy).toHaveBeenCalledWith(10.5, 'Description');
     });
 
     it('should not call on submit handler if amount not provided', () => {
