@@ -5,19 +5,19 @@ var AuthFormView = require('AuthFormView');
 
 var authApi = require('authApi');
 
-var SignInController = React.createClass({
+var SignUpController = React.createClass({
     getInitialState: function () {
-        return ({ isLoading: false });
+        return ({
+            isLoading: false
+        });
     },
-    onSubmit: function (username, password) {
-        var that = this;
+    onSubmit: function (username, password, accountType) {
         this.setState({ isLoading: true });
-        authApi.signIn(username, password).then(
+        var that = this;
+        authApi.signUp(username, password, accountType).then(
             function (response) {
-                var token = response.data.token;
-                localStorage.setItem('token', token);
                 that.setState({ isLoading: false });
-                window.location.replace('/#/expenses'); // FIXME there must be a better way to do this
+                window.location.replace('/#/sign_in');
             },
             function (error) {
                 that.setState({ isLoading: false });
@@ -28,21 +28,19 @@ var SignInController = React.createClass({
     doRender: function () {
         var {isLoading} = this.state;
         if (isLoading) {
-            return (
-                <span className="loading">Loading...</span>
-            );
+            return (<span>Loading...</span>);
         } else {
-            return (<AuthFormView onSubmit={this.onSubmit} />);
+            return (<AuthFormView showAccountTypeSelector={true} onSubmit={this.onSubmit} />);
         }
     },
     render: function () {
         return (
             <div>
-                <Link to="/" >Sign Up</Link>
+                <Link to="/sign_in" >Sign In</Link> 
                 {this.doRender()}
             </div>
         );
     }
 });
 
-module.exports = SignInController;
+module.exports = SignUpController;
