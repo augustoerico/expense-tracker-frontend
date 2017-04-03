@@ -26,11 +26,10 @@ var ExpenseCreateController = React.createClass({
     doRender: function () {
         var {isLoading} = this.state;
         if (isLoading) {
-            return (<span>Loading...</span>);
+            return (<span><h4 className="centered">Loading...</h4></span>);
         } else {
             return (
                 <div>
-                    <Link to="/expenses">Back</Link>
                     <ExpenseFormView onSubmit={this.onSubmit} />
                 </div>
             );

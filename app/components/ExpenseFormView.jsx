@@ -1,5 +1,7 @@
 var React = require('react');
 
+var {Link} = require('react-router');
+
 var ExpenseFormView = React.createClass({
     onSubmit: function (e) {
         e.preventDefault();
@@ -15,11 +17,12 @@ var ExpenseFormView = React.createClass({
     render: function() {
         return (
             <div>
-                ExpenseFormView.jsx
+                <h4>Add an expense</h4>
                 <form onSubmit={this.onSubmit}>
                     <input ref="amount" type="number" step="0.01" min="0" placeholder="Expense amount"/>
                     <input ref="description" type="text" placeholder="Expense description"/>
-                    <button type="submit" className="button">Submit</button>
+                    <button type="submit" className="button expanded">Submit</button>
+                    <Link to="/expenses" className="button expanded hollow">Back</Link>
                 </form>
             </div>
         );

@@ -16,7 +16,8 @@ var ExpenseListView = React.createClass({
     render: function () {
         return (
             <div>
-                <ul>
+                <h4>Expenses</h4>
+                <ul className="menu vertical">
                     {this.doRender()}
                 </ul>
             </div>

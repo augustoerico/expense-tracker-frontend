@@ -29,7 +29,7 @@ var SignInController = React.createClass({
         var {isLoading} = this.state;
         if (isLoading) {
             return (
-                <span className="loading">Loading...</span>
+                <h4 className="loading">Loading...</h4>
             );
         } else {
             return (<AuthFormView onSubmit={this.onSubmit} />);
@@ -38,7 +38,7 @@ var SignInController = React.createClass({
     render: function () {
         return (
             <div>
-                <div>
+                <div className="column">
                     <h4>Sign In</h4>
                 </div>
                 {this.doRender()}
