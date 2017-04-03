@@ -5,14 +5,18 @@ var ExpenseItemView = React.createClass({
         var {amount, description, datetime} = this.props;
         return (
             <li>
-                <div>
-                    <span>{description}</span>
-                </div>
-                <div>
-                    <span>{amount}</span>
-                </div>
-                <div>
-                    <span>{datetime}</span>
+                <div className="row small-2 medium-6">
+                    <div className="column">
+                        <span>{datetime}</span>
+                    </div>
+                    <div className="column">
+                        <div className="row">
+                            <span>{description}</span>
+                        </div>
+                        <div className="row">
+                            <span><h4>${amount}</h4></span>
+                        </div>
+                    </div>
                 </div>
             </li>
         );

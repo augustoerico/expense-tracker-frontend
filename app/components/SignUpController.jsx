@@ -28,7 +28,7 @@ var SignUpController = React.createClass({
     doRender: function () {
         var {isLoading} = this.state;
         if (isLoading) {
-            return (<span>Loading...</span>);
+            return (<h4 className="loading">Loading...</h4>);
         } else {
             return (<AuthFormView showAccountTypeSelector={true} onSubmit={this.onSubmit} />);
         }
@@ -36,7 +36,9 @@ var SignUpController = React.createClass({
     render: function () {
         return (
             <div>
-                <Link to="/sign_in" >Sign In</Link> 
+                <div>
+                    <h4>Sign Up</h4>
+                </div>
                 {this.doRender()}
             </div>
         );

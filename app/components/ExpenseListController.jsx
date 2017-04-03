@@ -41,8 +41,12 @@ var ExpenseListController = React.createClass({
     render: function () {
         return (
             <div>
-                <Link to="/sign_in" onClick={ function () { localStorage.removeItem('token') } }>Logout</Link>
-                <Link to="/expenses/new" >Add an expense</Link>
+                <div className="controls button hollow expanded" >
+                    <Link to="/" onClick={ function () { localStorage.removeItem('token') } }>Logout</Link>
+                </div>
+                <div className="controls button hollow expanded" >
+                    <Link to="/expenses/new" >Add an expense</Link>
+                </div>
                 {this.doRender()}
             </div>
         );
