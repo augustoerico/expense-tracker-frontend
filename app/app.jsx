@@ -5,6 +5,7 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var Main = require('Main');
 var SignInController = require('SignInController');
 var ExpenseListController = require('ExpenseListController');
+var ExpenseCreateController = require('ExpenseCreateController');
 
 // load foundation
 require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
@@ -23,6 +24,7 @@ ReactDOM.render(
       <Route path="/" component={Main} >
         <Route path="/sign_in" component={SignInController} />
         <Route path="/expenses" component={ExpenseListController} onEnter={requiresAuth} />
+        <Route path="/expenses/new" component={ExpenseCreateController} onEnter={requiresAuth} />
       </Route>
   </Router>,
   document.getElementById('app')
