@@ -1,4 +1,5 @@
 var React = require('react');
+var {Link} = require('react-router');
 
 var ExpenseListView = require('ExpenseListView');
 
@@ -40,6 +41,7 @@ var ExpenseListController = React.createClass({
     render: function () {
         return (
             <div>
+                <Link to="/expenses/new" >Add an expense</Link>
                 {this.doRender()}
             </div>
         );
