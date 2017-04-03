@@ -41,7 +41,7 @@ var ExpenseListController = React.createClass({
     render: function () {
         return (
             <div>
-                <Link to="/sign_in" onClick={ function () { localStorage.removeItem('token') } }>Logout</Link>
+                <Link to="/" onClick={ function () { localStorage.removeItem('token') } }>Logout</Link>
                 <Link to="/expenses/new" >Add an expense</Link>
                 {this.doRender()}
             </div>

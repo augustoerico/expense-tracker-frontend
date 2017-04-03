@@ -36,7 +36,9 @@ var SignUpController = React.createClass({
     render: function () {
         return (
             <div>
-                <Link to="/sign_in" >Sign In</Link> 
+                <div>
+                    <span>Sign Up</span>
+                </div>
                 {this.doRender()}
             </div>
         );
