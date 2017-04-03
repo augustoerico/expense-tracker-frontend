@@ -8,6 +8,7 @@ This is the backend application for the project Expense Tracker. Refer to [Expen
 
 - [ ] add styles (Foundation)
 - [ ] delete expense entry
+- [ ] generate reports
 - [ ] add tests to `*Controller.jsx` components
 - [ ] integrate to `sign_out` endpoint
 
