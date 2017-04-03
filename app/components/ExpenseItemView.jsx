@@ -4,7 +4,7 @@ var ExpenseItemView = React.createClass({
     render: function () {
         var {amount, description, datetime} = this.props;
         return (
-            <div>
+            <li>
                 <div>
                     <span>{description}</span>
                 </div>
@@ -14,7 +14,7 @@ var ExpenseItemView = React.createClass({
                 <div>
                     <span>{datetime}</span>
                 </div>
-            </div>
+            </li>
         );
     }
 });
