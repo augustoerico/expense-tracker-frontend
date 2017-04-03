@@ -27,7 +27,7 @@ describe('SignInController', () => {
 
         signInController.setState({ isLoading: true });
 
-        expect($el.find('span.loading').length).toBe(1);
+        expect($el.find('.loading').length).toBe(1);
     });
 
 });

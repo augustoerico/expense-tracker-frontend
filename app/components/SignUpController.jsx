@@ -28,7 +28,7 @@ var SignUpController = React.createClass({
     doRender: function () {
         var {isLoading} = this.state;
         if (isLoading) {
-            return (<span>Loading...</span>);
+            return (<h4 className="loading">Loading...</h4>);
         } else {
             return (<AuthFormView showAccountTypeSelector={true} onSubmit={this.onSubmit} />);
         }
