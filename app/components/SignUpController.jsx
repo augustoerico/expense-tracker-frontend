@@ -37,7 +37,7 @@ var SignUpController = React.createClass({
         return (
             <div>
                 <div>
-                    <span>Sign Up</span>
+                    <h4>Sign Up</h4>
                 </div>
                 {this.doRender()}
             </div>

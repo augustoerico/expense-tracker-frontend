@@ -39,7 +39,7 @@ var SignInController = React.createClass({
         return (
             <div>
                 <div>
-                    <span>Sign In</span>
+                    <h4>Sign In</h4>
                 </div>
                 {this.doRender()}
             </div>
