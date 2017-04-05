@@ -3,7 +3,6 @@ var ReactDOM = require('react-dom');
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
 var Main = require('Main');
-var Index = require('Index');
 var SignUpController = require('SignUpController');
 var SignInController = require('SignInController');
 var ExpenseListController = require('ExpenseListController');
