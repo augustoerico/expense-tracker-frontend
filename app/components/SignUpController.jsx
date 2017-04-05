@@ -30,13 +30,18 @@ var SignUpController = React.createClass({
         if (isLoading) {
             return (<h4 className="loading">Loading...</h4>);
         } else {
-            return (<AuthFormView showAccountTypeSelector={true} onSubmit={this.onSubmit} />);
+            return (
+                <div>
+                    <Link to="/sign_in" >Go to sign in</Link>
+                    <AuthFormView showAccountTypeSelector={true} onSubmit={this.onSubmit} />
+                </div>
+            );
         }
     },
     render: function () {
         return (
             <div>
-                <div>
+                <div className="centered">
                     <h4>Sign Up</h4>
                 </div>
                 {this.doRender()}

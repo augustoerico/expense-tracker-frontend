@@ -4,6 +4,8 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
 var Main = require('Main');
 var Index = require('Index');
+var SignUpController = require('SignUpController');
+var SignInController = require('SignInController');
 var ExpenseListController = require('ExpenseListController');
 var ExpenseCreateController = require('ExpenseCreateController');
 
@@ -22,7 +24,9 @@ var requiresAuth = function (nextState, replace) {
 ReactDOM.render(
   <Router history={hashHistory}>
       <Route path="/" component={Main} >
-        <IndexRoute component={Index} />
+        <IndexRoute component={SignUpController} />
+        <Route path="/sign_up" component={SignUpController} />
+        <Route path="/sign_in" component={SignInController} />
         <Route path="/expenses" component={ExpenseListController} onEnter={requiresAuth} />
         <Route path="/expenses/new" component={ExpenseCreateController} onEnter={requiresAuth} />
       </Route>

@@ -32,13 +32,18 @@ var SignInController = React.createClass({
                 <h4 className="loading">Loading...</h4>
             );
         } else {
-            return (<AuthFormView onSubmit={this.onSubmit} />);
+            return (
+                <div>
+                    <Link to="/sign_up" >Go to sign up</Link>
+                    <AuthFormView onSubmit={this.onSubmit} />
+                </div>
+            );
         }
     },
     render: function () {
         return (
             <div>
-                <div className="column">
+                <div className="centered">
                     <h4>Sign In</h4>
                 </div>
                 {this.doRender()}
