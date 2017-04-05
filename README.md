@@ -38,4 +38,4 @@ Application will run on `http://localhost:3000/#/`
 
 May be unavailable due hosting limitations
 
-[http://expenses-tracker-frontend.herokuapp.com/#/](http://expenses-tracker-frontend.herokuapp.com/#/sign_in)
+[http://expenses-tracker-frontend.herokuapp.com/#/](http://expenses-tracker-frontend.herokuapp.com/#/)
