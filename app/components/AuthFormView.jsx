@@ -36,8 +36,8 @@ var AuthFormView = React.createClass({
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
-                    <input ref="username" type="text" placeholder="username" />
-                    <input ref="password" type="password" placeholder="password" />
+                    <input ref="username" type="text" placeholder="username" required/>
+                    <input ref="password" type="password" placeholder="password" required/>
                     {renderAccountTypeSelector()}
                     <div className="controls">
                         <button className="button primary expanded" type="submit">Submit</button>
